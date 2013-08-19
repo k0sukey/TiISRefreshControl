@@ -1,0 +1,6 @@
+[submodule "ISRefreshControl"]
+	path = ISRefreshControl
+	url = git@github.com:ishkawa/ISRefreshControl.git
+[submodule "ISMethodSwizzling"]
+	path = ISMethodSwizzling
+	url = git@github.com:ishkawa/ISMethodSwizzling.git

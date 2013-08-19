@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24416B8111C4CA220047AFDD /* Build & Test */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */;
+			buildPhases = (
+				24416B8011C4CA220047AFDD /* ShellScript */,
+			);
+			dependencies = (
+				24416B8511C4CA280047AFDD /* PBXTargetDependency */,
+			);
+			name = "Build & Test";
+			productName = "Build & test";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		23F9A04317C1B193004E8028 /* TiUITableView+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A03E17C1ACCB004E8028 /* TiUITableView+ISRefreshControl.h */; };
+		23F9A04417C1B196004E8028 /* TiUITableView+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A03F17C1ACCB004E8028 /* TiUITableView+ISRefreshControl.m */; };
+		23F9A04517C1B199004E8028 /* TiUITableViewProxy+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A04017C1ACE8004E8028 /* TiUITableViewProxy+ISRefreshControl.h */; };
+		23F9A04617C1B19D004E8028 /* TiUITableViewProxy+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A04117C1ACE8004E8028 /* TiUITableViewProxy+ISRefreshControl.m */; };
+		23F9A04A17C1B33B004E8028 /* ISGumView.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A03217C1AC75004E8028 /* ISGumView.h */; };
+		23F9A04B17C1B33E004E8028 /* ISGumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A03317C1AC75004E8028 /* ISGumView.m */; };
+		23F9A04C17C1B344004E8028 /* ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A03417C1AC75004E8028 /* ISRefreshControl.h */; };
+		23F9A04D17C1B347004E8028 /* ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A03517C1AC75004E8028 /* ISRefreshControl.m */; };
+		23F9A04E17C1B357004E8028 /* ISScalingActivityIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A03617C1AC75004E8028 /* ISScalingActivityIndicatorView.h */; };
+		23F9A04F17C1B35B004E8028 /* ISScalingActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A03717C1AC75004E8028 /* ISScalingActivityIndicatorView.m */; };
+		23F9A05017C1B35E004E8028 /* UIColor+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A03817C1AC75004E8028 /* UIColor+ISRefreshControl.h */; };
+		23F9A05117C1B362004E8028 /* UIColor+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A03917C1AC75004E8028 /* UIColor+ISRefreshControl.m */; };
+		23F9A05217C1B367004E8028 /* UITableView+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A03A17C1AC75004E8028 /* UITableView+ISRefreshControl.h */; };
+		23F9A05317C1B36B004E8028 /* UITableView+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A03B17C1AC75004E8028 /* UITableView+ISRefreshControl.m */; };
+		23F9A05417C1B36F004E8028 /* UITableViewController+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A03C17C1AC75004E8028 /* UITableViewController+ISRefreshControl.h */; };
+		23F9A05517C1B373004E8028 /* UITableViewController+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A03D17C1AC75004E8028 /* UITableViewController+ISRefreshControl.m */; };
+		23F9A05A17C1BA39004E8028 /* ISMethodSwizzling-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A05717C1BA39004E8028 /* ISMethodSwizzling-Prefix.pch */; };
+		23F9A05B17C1BA39004E8028 /* ISMethodSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A05817C1BA39004E8028 /* ISMethodSwizzling.h */; };
+		23F9A05C17C1BA39004E8028 /* ISMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A05917C1BA39004E8028 /* ISMethodSwizzling.m */; };
+		23F9A06017C1CC76004E8028 /* TiUIListView+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A05E17C1CC75004E8028 /* TiUIListView+ISRefreshControl.h */; };
+		23F9A06117C1CC76004E8028 /* TiUIListView+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A05F17C1CC75004E8028 /* TiUIListView+ISRefreshControl.m */; };
+		23F9A06417C1CC91004E8028 /* TiUIListViewProxy+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A06217C1CC90004E8028 /* TiUIListViewProxy+ISRefreshControl.h */; };
+		23F9A06517C1CC91004E8028 /* TiUIListViewProxy+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A06317C1CC90004E8028 /* TiUIListViewProxy+ISRefreshControl.m */; };
+		24DD6CF91134B3F500162E58 /* BeK0sukeTiisrefreshcontrolModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* BeK0sukeTiisrefreshcontrolModule.h */; };
+		24DD6CFA1134B3F500162E58 /* BeK0sukeTiisrefreshcontrolModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* BeK0sukeTiisrefreshcontrolModule.m */; };
+		24DE9E1111C5FE74003F90F6 /* BeK0sukeTiisrefreshcontrolModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* BeK0sukeTiisrefreshcontrolModuleAssets.h */; };
+		24DE9E1211C5FE74003F90F6 /* BeK0sukeTiisrefreshcontrolModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* BeK0sukeTiisrefreshcontrolModuleAssets.m */; };
+		AA747D9F0F9514B9006C5449 /* BeK0sukeTiisrefreshcontrol_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* BeK0sukeTiisrefreshcontrol_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24416B8411C4CA280047AFDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = TiISRefreshControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		23F9A03017C1AC75004E8028 /* ISRefresgControlIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ISRefresgControlIcon.png; sourceTree = "<group>"; };
+		23F9A03117C1AC75004E8028 /* ISRefresgControlIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ISRefresgControlIcon@2x.png"; sourceTree = "<group>"; };
+		23F9A03217C1AC75004E8028 /* ISGumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISGumView.h; sourceTree = "<group>"; };
+		23F9A03317C1AC75004E8028 /* ISGumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISGumView.m; sourceTree = "<group>"; };
+		23F9A03417C1AC75004E8028 /* ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRefreshControl.h; sourceTree = "<group>"; };
+		23F9A03517C1AC75004E8028 /* ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRefreshControl.m; sourceTree = "<group>"; };
+		23F9A03617C1AC75004E8028 /* ISScalingActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISScalingActivityIndicatorView.h; sourceTree = "<group>"; };
+		23F9A03717C1AC75004E8028 /* ISScalingActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISScalingActivityIndicatorView.m; sourceTree = "<group>"; };
+		23F9A03817C1AC75004E8028 /* UIColor+ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ISRefreshControl.h"; sourceTree = "<group>"; };
+		23F9A03917C1AC75004E8028 /* UIColor+ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ISRefreshControl.m"; sourceTree = "<group>"; };
+		23F9A03A17C1AC75004E8028 /* UITableView+ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ISRefreshControl.h"; sourceTree = "<group>"; };
+		23F9A03B17C1AC75004E8028 /* UITableView+ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ISRefreshControl.m"; sourceTree = "<group>"; };
+		23F9A03C17C1AC75004E8028 /* UITableViewController+ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+ISRefreshControl.h"; sourceTree = "<group>"; };
+		23F9A03D17C1AC75004E8028 /* UITableViewController+ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+ISRefreshControl.m"; sourceTree = "<group>"; };
+		23F9A03E17C1ACCB004E8028 /* TiUITableView+ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUITableView+ISRefreshControl.h"; path = "Classes/TiUITableView+ISRefreshControl.h"; sourceTree = SOURCE_ROOT; };
+		23F9A03F17C1ACCB004E8028 /* TiUITableView+ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUITableView+ISRefreshControl.m"; path = "Classes/TiUITableView+ISRefreshControl.m"; sourceTree = SOURCE_ROOT; };
+		23F9A04017C1ACE8004E8028 /* TiUITableViewProxy+ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUITableViewProxy+ISRefreshControl.h"; path = "Classes/TiUITableViewProxy+ISRefreshControl.h"; sourceTree = SOURCE_ROOT; };
+		23F9A04117C1ACE8004E8028 /* TiUITableViewProxy+ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUITableViewProxy+ISRefreshControl.m"; path = "Classes/TiUITableViewProxy+ISRefreshControl.m"; sourceTree = SOURCE_ROOT; };
+		23F9A05717C1BA39004E8028 /* ISMethodSwizzling-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ISMethodSwizzling-Prefix.pch"; sourceTree = "<group>"; };
+		23F9A05817C1BA39004E8028 /* ISMethodSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISMethodSwizzling.h; sourceTree = "<group>"; };
+		23F9A05917C1BA39004E8028 /* ISMethodSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISMethodSwizzling.m; sourceTree = "<group>"; };
+		23F9A05E17C1CC75004E8028 /* TiUIListView+ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUIListView+ISRefreshControl.h"; path = "Classes/TiUIListView+ISRefreshControl.h"; sourceTree = "<group>"; };
+		23F9A05F17C1CC75004E8028 /* TiUIListView+ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUIListView+ISRefreshControl.m"; path = "Classes/TiUIListView+ISRefreshControl.m"; sourceTree = "<group>"; };
+		23F9A06217C1CC90004E8028 /* TiUIListViewProxy+ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUIListViewProxy+ISRefreshControl.h"; path = "Classes/TiUIListViewProxy+ISRefreshControl.h"; sourceTree = "<group>"; };
+		23F9A06317C1CC90004E8028 /* TiUIListViewProxy+ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUIListViewProxy+ISRefreshControl.m"; path = "Classes/TiUIListViewProxy+ISRefreshControl.m"; sourceTree = "<group>"; };
+		24DD6CF71134B3F500162E58 /* BeK0sukeTiisrefreshcontrolModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeK0sukeTiisrefreshcontrolModule.h; path = Classes/BeK0sukeTiisrefreshcontrolModule.h; sourceTree = "<group>"; };
+		24DD6CF81134B3F500162E58 /* BeK0sukeTiisrefreshcontrolModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeK0sukeTiisrefreshcontrolModule.m; path = Classes/BeK0sukeTiisrefreshcontrolModule.m; sourceTree = "<group>"; };
+		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
+		24DE9E0F11C5FE74003F90F6 /* BeK0sukeTiisrefreshcontrolModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeK0sukeTiisrefreshcontrolModuleAssets.h; path = Classes/BeK0sukeTiisrefreshcontrolModuleAssets.h; sourceTree = "<group>"; };
+		24DE9E1011C5FE74003F90F6 /* BeK0sukeTiisrefreshcontrolModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeK0sukeTiisrefreshcontrolModuleAssets.m; path = Classes/BeK0sukeTiisrefreshcontrolModuleAssets.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* BeK0sukeTiisrefreshcontrol_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeK0sukeTiisrefreshcontrol_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libBeK0sukeTiisrefreshcontrol.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBeK0sukeTiisrefreshcontrol.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libBeK0sukeTiisrefreshcontrol.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* TiISRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = TiISRefreshControl;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				23F9A05617C1BA39004E8028 /* ISMethodSwizzling */,
+				23F9A02E17C1AC75004E8028 /* ISRefreshControl */,
+				24DE9E0F11C5FE74003F90F6 /* BeK0sukeTiisrefreshcontrolModuleAssets.h */,
+				24DE9E1011C5FE74003F90F6 /* BeK0sukeTiisrefreshcontrolModuleAssets.m */,
+				24DD6CF71134B3F500162E58 /* BeK0sukeTiisrefreshcontrolModule.h */,
+				24DD6CF81134B3F500162E58 /* BeK0sukeTiisrefreshcontrolModule.m */,
+				23F9A03E17C1ACCB004E8028 /* TiUITableView+ISRefreshControl.h */,
+				23F9A03F17C1ACCB004E8028 /* TiUITableView+ISRefreshControl.m */,
+				23F9A04017C1ACE8004E8028 /* TiUITableViewProxy+ISRefreshControl.h */,
+				23F9A04117C1ACE8004E8028 /* TiUITableViewProxy+ISRefreshControl.m */,
+				23F9A05E17C1CC75004E8028 /* TiUIListView+ISRefreshControl.h */,
+				23F9A05F17C1CC75004E8028 /* TiUIListView+ISRefreshControl.m */,
+				23F9A06217C1CC90004E8028 /* TiUIListViewProxy+ISRefreshControl.h */,
+				23F9A06317C1CC90004E8028 /* TiUIListViewProxy+ISRefreshControl.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		23F9A02E17C1AC75004E8028 /* ISRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				23F9A02F17C1AC75004E8028 /* Images */,
+				23F9A03217C1AC75004E8028 /* ISGumView.h */,
+				23F9A03317C1AC75004E8028 /* ISGumView.m */,
+				23F9A03417C1AC75004E8028 /* ISRefreshControl.h */,
+				23F9A03517C1AC75004E8028 /* ISRefreshControl.m */,
+				23F9A03617C1AC75004E8028 /* ISScalingActivityIndicatorView.h */,
+				23F9A03717C1AC75004E8028 /* ISScalingActivityIndicatorView.m */,
+				23F9A03817C1AC75004E8028 /* UIColor+ISRefreshControl.h */,
+				23F9A03917C1AC75004E8028 /* UIColor+ISRefreshControl.m */,
+				23F9A03A17C1AC75004E8028 /* UITableView+ISRefreshControl.h */,
+				23F9A03B17C1AC75004E8028 /* UITableView+ISRefreshControl.m */,
+				23F9A03C17C1AC75004E8028 /* UITableViewController+ISRefreshControl.h */,
+				23F9A03D17C1AC75004E8028 /* UITableViewController+ISRefreshControl.m */,
+			);
+			name = ISRefreshControl;
+			path = ISRefreshControl/ISRefreshControl;
+			sourceTree = "<group>";
+		};
+		23F9A02F17C1AC75004E8028 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				23F9A03017C1AC75004E8028 /* ISRefresgControlIcon.png */,
+				23F9A03117C1AC75004E8028 /* ISRefresgControlIcon@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		23F9A05617C1BA39004E8028 /* ISMethodSwizzling */ = {
+			isa = PBXGroup;
+			children = (
+				23F9A05717C1BA39004E8028 /* ISMethodSwizzling-Prefix.pch */,
+				23F9A05817C1BA39004E8028 /* ISMethodSwizzling.h */,
+				23F9A05917C1BA39004E8028 /* ISMethodSwizzling.m */,
+			);
+			name = ISMethodSwizzling;
+			path = ISMethodSwizzling/ISMethodSwizzling;
+			sourceTree = SOURCE_ROOT;
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* BeK0sukeTiisrefreshcontrol_Prefix.pch */,
+				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* BeK0sukeTiisrefreshcontrol_Prefix.pch in Headers */,
+				24DD6CF91134B3F500162E58 /* BeK0sukeTiisrefreshcontrolModule.h in Headers */,
+				24DE9E1111C5FE74003F90F6 /* BeK0sukeTiisrefreshcontrolModuleAssets.h in Headers */,
+				23F9A04317C1B193004E8028 /* TiUITableView+ISRefreshControl.h in Headers */,
+				23F9A04517C1B199004E8028 /* TiUITableViewProxy+ISRefreshControl.h in Headers */,
+				23F9A04A17C1B33B004E8028 /* ISGumView.h in Headers */,
+				23F9A04C17C1B344004E8028 /* ISRefreshControl.h in Headers */,
+				23F9A04E17C1B357004E8028 /* ISScalingActivityIndicatorView.h in Headers */,
+				23F9A05017C1B35E004E8028 /* UIColor+ISRefreshControl.h in Headers */,
+				23F9A05217C1B367004E8028 /* UITableView+ISRefreshControl.h in Headers */,
+				23F9A05417C1B36F004E8028 /* UITableViewController+ISRefreshControl.h in Headers */,
+				23F9A05A17C1BA39004E8028 /* ISMethodSwizzling-Prefix.pch in Headers */,
+				23F9A05B17C1BA39004E8028 /* ISMethodSwizzling.h in Headers */,
+				23F9A06017C1CC76004E8028 /* TiUIListView+ISRefreshControl.h in Headers */,
+				23F9A06417C1CC91004E8028 /* TiUIListViewProxy+ISRefreshControl.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* TiISRefreshControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "TiISRefreshControl" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TiISRefreshControl;
+			productName = TiISRefreshControl;
+			productReference = D2AAC07E0554694100DB518D /* libBeK0sukeTiisrefreshcontrol.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "TiISRefreshControl" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* TiISRefreshControl */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* TiISRefreshControl */,
+				24416B8111C4CA220047AFDD /* Build & Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24416B8011C4CA220047AFDD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DD6CFA1134B3F500162E58 /* BeK0sukeTiisrefreshcontrolModule.m in Sources */,
+				24DE9E1211C5FE74003F90F6 /* BeK0sukeTiisrefreshcontrolModuleAssets.m in Sources */,
+				23F9A04417C1B196004E8028 /* TiUITableView+ISRefreshControl.m in Sources */,
+				23F9A04617C1B19D004E8028 /* TiUITableViewProxy+ISRefreshControl.m in Sources */,
+				23F9A04B17C1B33E004E8028 /* ISGumView.m in Sources */,
+				23F9A04D17C1B347004E8028 /* ISRefreshControl.m in Sources */,
+				23F9A04F17C1B35B004E8028 /* ISScalingActivityIndicatorView.m in Sources */,
+				23F9A05117C1B362004E8028 /* UIColor+ISRefreshControl.m in Sources */,
+				23F9A05317C1B36B004E8028 /* UITableView+ISRefreshControl.m in Sources */,
+				23F9A05517C1B373004E8028 /* UITableViewController+ISRefreshControl.m in Sources */,
+				23F9A05C17C1BA39004E8028 /* ISMethodSwizzling.m in Sources */,
+				23F9A06117C1CC76004E8028 /* TiUIListView+ISRefreshControl.m in Sources */,
+				23F9A06517C1CC91004E8028 /* TiUIListViewProxy+ISRefreshControl.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24416B8511C4CA280047AFDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* TiISRefreshControl */;
+			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/BeK0sukeTiisrefreshcontrol.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BeK0sukeTiisrefreshcontrol_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = BeK0sukeTiisrefreshcontrol;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/BeK0sukeTiisrefreshcontrol.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BeK0sukeTiisrefreshcontrol_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = BeK0sukeTiisrefreshcontrol;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/BeK0sukeTiisrefreshcontrol.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BeK0sukeTiisrefreshcontrol_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = BeK0sukeTiisrefreshcontrol;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/BeK0sukeTiisrefreshcontrol.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BeK0sukeTiisrefreshcontrol_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = BeK0sukeTiisrefreshcontrol;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		24416B8211C4CA220047AFDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & test";
+			};
+			name = Debug;
+		};
+		24416B8311C4CA220047AFDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build & test";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "TiISRefreshControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "TiISRefreshControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24416B8211C4CA220047AFDD /* Debug */,
+				24416B8311C4CA220047AFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
