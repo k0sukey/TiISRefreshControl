@@ -6,10 +6,12 @@
  */
 #import "TiViewProxy.h"
 #import "TiUITableViewProxy.h"
+#import "TiUITableView+ISRefreshControl.h"
 
 @interface TiUITableViewProxy (TiUITableViewProxy_ISRefreshControl)
 
 -(void)refreshBegin:(id)args;
 -(void)refreshFinish:(id)args;
+-(id)isRefreshing:(id)args;
 
 @end

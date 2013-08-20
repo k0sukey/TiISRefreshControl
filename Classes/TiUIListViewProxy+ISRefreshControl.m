@@ -5,7 +5,6 @@
  * Please see the LICENSE included with this distribution for details.
  */
 #import "TiUIListViewProxy+ISRefreshControl.h"
-#import "TiUtils.h"
 
 @implementation TiUIListViewProxy (TiUIListViewProxy_ISRefreshControl)
 
@@ -19,5 +18,10 @@
 
 USE_VIEW_FOR_UI_METHOD(refreshBegin);
 USE_VIEW_FOR_UI_METHOD(refreshFinish);
+
+-(id)isRefreshing:(id)args
+{
+    return [(TiUIListView *)[self view] isRefreshing:args];
+}
 
 @end

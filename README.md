@@ -16,6 +16,18 @@ $ git clone git@github.com:k0sukey/TiISRefreshControl.git
 $ cd TiISRefreshControl
 $ git submodule init
 $ git submodule update
+```
+
+Open TiISRefreshControl.xcodeproj and edit the ISRefreshControl/ISGumView.m at line:46
+
+```
+// self.imageView.image = [UIImage imageNamed:@"ISRefresgControlIcon"];
+self.imageView.image = [UIImage imageNamed:@"modules/be.k0suke.tiisrefreshcontrol/ISRefresgControlIcon.png"];
+```
+
+Execute build.py
+
+```
 $ ./build.py
 ```
 
@@ -53,22 +65,21 @@ The tint color for the refresh control.
 #### getRefreshControlTintColor / setRefreshControlTintColor
 getter / setter for refreshControlTintColor.
 
+#### isRefreshing
+A Boolean value indicating whether a refresh operation has been triggered and is in progress.
+
+#### refreshBegin
+Tells the control that a refresh operation was started programmatically.
+
 #### refreshFinish
 Tells the control that a refresh operation has ended.
 
 ### Events
 #### refreshstart
-Refreshing start event.
+Refresh starting event.
 
-## Known limitations
-This module extended Ti.UI.TableView and Ti.UI.ListView.
-Please be declared without the use of Ti.UI.TableView and Ti.UI.ListView.
-Device build error if you do not declare.
-
-```
-Ti.UI.createTableView();
-Ti.UI.createListView();
-```
+#### refreshend
+Refresh ending event.
 
 ## License
 

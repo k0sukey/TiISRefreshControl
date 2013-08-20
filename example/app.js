@@ -59,10 +59,15 @@ fishSection.setItems(fishDataSet);
 listView.appendSection(fishSection);
 
 listView.addEventListener('refreshstart', function(){
+	console.log('isRefreshing: ' + listView.isRefreshing());
 	setTimeout(function(){
 		listView.refreshFinish();
-		win.remove(listView);
+
+		setTimeout(function(){
+			console.log('isRefreshing: ' + listView.isRefreshing());
+		}, 5000);
 	}, 5000);
 });
+console.log('isRefreshing: ' + listView.isRefreshing());
 
 win.open();

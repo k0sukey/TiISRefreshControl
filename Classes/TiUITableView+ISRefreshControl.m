@@ -57,6 +57,16 @@ ISRefreshControl *refreshControl;
 -(void)refreshFinish:(id)args
 {
     [refreshControl endRefreshing];
+    
+    if ([self.proxy _hasListeners:@"refreshend"])
+    {
+        [self.proxy fireEvent:@"refreshend"];
+    }
+}
+
+-(void)isRefreshing:(id)args
+{
+    return NUMBOOL(refreshControl.isRefreshing);
 }
 
 @end

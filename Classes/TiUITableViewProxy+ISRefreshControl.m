@@ -20,4 +20,9 @@
 USE_VIEW_FOR_UI_METHOD(refreshBegin);
 USE_VIEW_FOR_UI_METHOD(refreshFinish);
 
+-(id)isRefreshing:(id)args
+{
+    return [(TiUITableView *)[self view] isRefreshing:args];
+}
+
 @end
