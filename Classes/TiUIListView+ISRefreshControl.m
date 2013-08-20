@@ -4,7 +4,6 @@
  * Licensed under the terms of the Apache Public License
  * Please see the LICENSE included with this distribution for details.
  */
-
 #import "TiUIListView+ISRefreshControl.h"
 
 @implementation TiUIListView (TiUIListView_ISRefreshControl)
@@ -48,6 +47,11 @@ ISRefreshControl *refreshControl;
     {
         [self.proxy fireEvent:@"refreshstart"];
     }
+}
+
+-(void)refreshBegin:(id)args
+{
+    [self refreshStart];
 }
 
 -(void)refreshFinish:(id)args

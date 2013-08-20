@@ -9,6 +9,7 @@
 
 @interface TiUIListViewProxy (TiUIListViewProxy_ISRefreshControl)
 
+-(void)refreshBegin:(id)args;
 -(void)refreshFinish:(id)args;
 
 @end

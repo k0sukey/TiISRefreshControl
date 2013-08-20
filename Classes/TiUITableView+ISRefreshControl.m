@@ -4,7 +4,6 @@
  * Licensed under the terms of the Apache Public License
  * Please see the LICENSE included with this distribution for details.
  */
-
 #import "TiUITableView+ISRefreshControl.h"
 
 @implementation TiUITableView (TiUITableView_ISRefreshControl)
@@ -20,8 +19,8 @@ ISRefreshControl *refreshControl;
         refreshControl = (id)[[ISRefreshControl alloc] init];
         [[self tableView] addSubview:refreshControl];
         [refreshControl addTarget:self
-                                action:@selector(refreshStart)
-                      forControlEvents:UIControlEventValueChanged];
+                           action:@selector(refreshStart)
+                 forControlEvents:UIControlEventValueChanged];
     }
 }
 
@@ -48,6 +47,11 @@ ISRefreshControl *refreshControl;
     {
         [self.proxy fireEvent:@"refreshstart"];
     }
+}
+
+-(void)refreshBegin:(id)args
+{
+    [self refreshStart];
 }
 
 -(void)refreshFinish:(id)args

@@ -4,7 +4,6 @@
  * Licensed under the terms of the Apache Public License
  * Please see the LICENSE included with this distribution for details.
  */
-
 #import "TiUITableViewProxy+ISRefreshControl.h"
 #import "TiUtils.h"
 
@@ -18,6 +17,7 @@
 }
 #endif
 
+USE_VIEW_FOR_UI_METHOD(refreshBegin);
 USE_VIEW_FOR_UI_METHOD(refreshFinish);
 
 @end

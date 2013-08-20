@@ -9,6 +9,7 @@
 
 @interface TiUITableViewProxy (TiUITableViewProxy_ISRefreshControl)
 
+-(void)refreshBegin:(id)args;
 -(void)refreshFinish:(id)args;
 
 @end

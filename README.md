@@ -60,6 +60,16 @@ Tells the control that a refresh operation has ended.
 #### refreshstart
 Refreshing start event.
 
+## Known limitations
+This module extended Ti.UI.TableView and Ti.UI.ListView.
+Please be declared without the use of Ti.UI.TableView and Ti.UI.ListView.
+Device build error if you do not declare.
+
+```
+Ti.UI.createTableView();
+Ti.UI.createListView();
+```
+
 ## License
 
 The MIT License (MIT) Copyright (c) 2013 Kosuke Isobe, Socketbase Inc.
