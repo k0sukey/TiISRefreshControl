@@ -11,6 +11,8 @@ ISRefreshControl is iOS4-compatible UIRefreshControl.
 * Compatible UIRefreshControl on iOS4 and iOS5
 
 ## Install
+[Compiled module download](be.k0suke.tiisrefreshcontrol-iphone-0.1.zip)
+
 ```
 $ git clone git@github.com:k0sukey/TiISRefreshControl.git
 $ cd TiISRefreshControl
