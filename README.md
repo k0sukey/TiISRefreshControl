@@ -32,7 +32,10 @@ $ ./build.py
 ```
 
 ## Usage
+There is no need a lot of event handling for pull-to-refresh.
+This is a very simply :D
 
+### Classic style(for Ti.UI.TableView)
 ```
 var tableView = Ti.UI.createTableView({
 	refreshControlTintColor: '#f00', // optional
@@ -55,6 +58,55 @@ tableView.addEventListener('refreshstart', function(){
 		tableView.refreshFinish();
 	}, 5000);
 });
+```
+
+### Alloy(for Ti.UI.ListView and data binding)
+#### View
+```
+<Window>
+	<ListView id="lists" defaultItemTemplate="list">
+		<Templates>
+			<ItemTemplate name="list">
+				<Label bindId="name" class="name"/>
+			</ItemTemplate>
+		</Templates>
+
+		<ListSection id="section" dataCollection="lists" dataTransform="doTransform">
+			<ListItem template="list" name:text="{name}"/>
+		</ListSection>
+	</ListView>
+</Window>
+```
+
+#### Controller
+```
+var lists = Alloy.Collections.lists;
+
+function doTransform(model) {
+	return model.toJSON();
+}
+
+$.lists.addEventListener('refreshstart', function(){
+	lists.fetch({
+		success: function(){
+			$.lists.refreshFinish();
+		},
+		error: function(){
+			$.lists.refreshFinish();
+		}
+	});
+});
+
+$.index.addEventListener('open', function(){
+	$.lists.refreshBegin();
+});
+
+$.index.open();
+```
+
+#### alloy.js
+```
+var lists = Alloy.Collections.lists = Alloy.createCollection('lists');
 ```
 
 ### Properties
