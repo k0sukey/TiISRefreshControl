@@ -51,16 +51,22 @@ ISRefreshControl *refreshControl;
 
 -(void)refreshBegin:(id)args
 {
-    [self refreshStart];
+    if (refreshControl.isRefreshing == NO)
+    {
+        [self refreshStart];        
+    }
 }
 
 -(void)refreshFinish:(id)args
 {
-    [refreshControl endRefreshing];
-    
-    if ([self.proxy _hasListeners:@"refreshend"])
+    if (refreshControl.isRefreshing == YES)
     {
-        [self.proxy fireEvent:@"refreshend"];
+        [refreshControl endRefreshing];
+        
+        if ([self.proxy _hasListeners:@"refreshend"])
+        {
+            [self.proxy fireEvent:@"refreshend"];
+        }
     }
 }
 
