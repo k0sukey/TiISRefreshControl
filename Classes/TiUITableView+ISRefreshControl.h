@@ -13,6 +13,7 @@
 @interface TiUITableView (TiUITableView_ISRefreshControl)
 
 -(void)setRefreshControlTintColor_:(id)args;
+-(void)setRefreshControlEnabled_:(id)args;
 
 -(void)refreshBegin:(id)args;
 -(void)refreshFinish:(id)args;

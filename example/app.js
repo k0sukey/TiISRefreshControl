@@ -2,9 +2,9 @@ var TiISRefreshControl = require('be.k0suke.tiisrefreshcontrol');
 Ti.API.info("module is => " + TiISRefreshControl);
 
 var win = Ti.UI.createWindow();
-
 /*
 var tableView = Ti.UI.createTableView({
+	refreshControlEnabled: false,
 	data: [
 		{ title: 'row0' },
 		{ title: 'row1' },
@@ -20,15 +20,27 @@ var tableView = Ti.UI.createTableView({
 });
 win.add(tableView);
 
+var enabled = false;
+tableView.addEventListener('click', function(){
+	if (enabled) {
+		tableView.setRefreshControlEnabled(false);
+		enabled = false;
+	} else {
+		tableView.setRefreshControlEnabled(true);
+		enabled = true;
+	}
+});
+
 tableView.addEventListener('refreshstart', function(){
 	setTimeout(function(){
 		tableView.refreshFinish();
-		win.remove(tableView);
 	}, 5000);
 });
 */
 
-var listView = Ti.UI.createListView();
+var listView = Ti.UI.createListView({
+	refreshControlEnabled: false
+});
 var sections = [];
 
 var fruitSection = Ti.UI.createListSection({ headerTitle: 'Fruits'});
@@ -58,6 +70,17 @@ var fishDataSet = [
 fishSection.setItems(fishDataSet);
 listView.appendSection(fishSection);
 
+var enabled = false;
+listView.addEventListener('itemclick', function(){
+	if (enabled) {
+		listView.setRefreshControlEnabled(false);
+		enabled = false;
+	} else {
+		listView.setRefreshControlEnabled(true);
+		enabled = true;
+	}
+});
+
 listView.addEventListener('refreshstart', function(){
 	console.log('isRefreshing: ' + listView.isRefreshing());
 	setTimeout(function(){
@@ -69,5 +92,7 @@ listView.addEventListener('refreshstart', function(){
 	}, 5000);
 });
 console.log('isRefreshing: ' + listView.isRefreshing());
+
+listView.refreshBegin();
 
 win.open();

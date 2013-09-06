@@ -17,7 +17,6 @@ ISRefreshControl *refreshControl;
     if (self)
     {
         refreshControl = (id)[[ISRefreshControl alloc] init];
-        [[self tableView] addSubview:refreshControl];
         [refreshControl addTarget:self
                            action:@selector(refreshStart)
                  forControlEvents:UIControlEventValueChanged];
@@ -39,8 +38,33 @@ ISRefreshControl *refreshControl;
     }
 }
 
+-(void)setRefreshControlEnabled_:(id)args
+{
+    BOOL val = [TiUtils boolValue:args def:YES];
+    
+    if (val == YES)
+    {
+        if ([refreshControl isDescendantOfView:[self tableView]] == NO)
+        {
+            [[self tableView] addSubview:refreshControl];
+        }
+    }
+    else
+    {
+        if ([refreshControl isDescendantOfView:[self tableView]] == YES)
+        {
+            [refreshControl removeFromSuperview];
+        }
+    }
+}
+
 -(void)refreshStart
 {
+    if ([refreshControl isDescendantOfView:[self tableView]] == NO)
+    {
+        return;
+    }
+    
     [refreshControl beginRefreshing];
     
     if ([self.proxy _hasListeners:@"refreshstart"])
@@ -51,6 +75,11 @@ ISRefreshControl *refreshControl;
 
 -(void)refreshBegin:(id)args
 {
+    if ([refreshControl isDescendantOfView:[self tableView]] == NO)
+    {
+        return;
+    }
+    
     if (refreshControl.isRefreshing == NO)
     {
         [self refreshStart];
@@ -59,6 +88,11 @@ ISRefreshControl *refreshControl;
 
 -(void)refreshFinish:(id)args
 {
+    if ([refreshControl isDescendantOfView:[self tableView]] == NO)
+    {
+        return;
+    }
+    
     if (refreshControl.isRefreshing == YES)
     {
         [refreshControl endRefreshing];

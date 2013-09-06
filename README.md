@@ -40,6 +40,7 @@ This is a very simply :D
 ### Classic style(for Ti.UI.TableView)
 ```
 var tableView = Ti.UI.createTableView({
+	refreshControlEnabled: true, // optional
 	refreshControlTintColor: '#f00', // optional
 	data: [
 		{ title: 'row0' },
@@ -112,10 +113,16 @@ var lists = Alloy.Collections.lists = Alloy.createCollection('lists');
 ```
 
 ### Properties
+#### refreshControlEnabled
+TiISRefreshControl enable or disable.
+
 #### refreshControlTintColor
 The tint color for the refresh control.
 
 ### Methods
+#### getRefreshControlEnabled / setRefreshControlEnabled
+getter / setter for refreshControlEnabled.
+
 #### getRefreshControlTintColor / setRefreshControlTintColor
 getter / setter for refreshControlTintColor.
 
