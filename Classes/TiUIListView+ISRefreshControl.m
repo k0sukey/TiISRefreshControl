@@ -5,10 +5,19 @@
  * Please see the LICENSE included with this distribution for details.
  */
 #import "TiUIListView+ISRefreshControl.h"
+#import <objc/runtime.h>
 
 @implementation TiUIListView (TiUIListView_ISRefreshControl)
 
-ISRefreshControl *refreshControl;
+-(void)setRefreshControl:(ISRefreshControl *)refreshControl
+{
+    objc_setAssociatedObject(self, @selector(refreshControl), refreshControl, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(ISRefreshControl *)refreshControl
+{
+    return objc_getAssociatedObject(self, @selector(refreshControl));
+}
 
 -(void)initializeState
 {
@@ -16,8 +25,8 @@ ISRefreshControl *refreshControl;
     
     if (self)
     {
-        refreshControl = (id)[[ISRefreshControl alloc] init];
-        [refreshControl addTarget:self
+        self.refreshControl = (id)[[ISRefreshControl alloc] init];
+        [self.refreshControl addTarget:self
                            action:@selector(refreshStart)
                  forControlEvents:UIControlEventValueChanged];
     }
@@ -34,7 +43,7 @@ ISRefreshControl *refreshControl;
     
     if (val != nil)
     {
-        refreshControl.tintColor = [[val _color] retain];
+        self.refreshControl.tintColor = [[val _color] retain];
     }
 }
 
@@ -44,28 +53,28 @@ ISRefreshControl *refreshControl;
     
     if (val == YES)
     {
-        if ([refreshControl isDescendantOfView:[self tableView]] == NO)
+        if ([self.refreshControl isDescendantOfView:[self tableView]] == NO)
         {
-            [[self tableView] addSubview:refreshControl];
+            [[self tableView] addSubview:self.refreshControl];
         }
     }
     else
     {
-        if ([refreshControl isDescendantOfView:[self tableView]] == YES)
+        if ([self.refreshControl isDescendantOfView:[self tableView]] == YES)
         {
-            [refreshControl removeFromSuperview];
+            [self.refreshControl removeFromSuperview];
         }
     }
 }
 
 -(void)refreshStart
 {
-    if ([refreshControl isDescendantOfView:[self tableView]] == NO)
+    if ([self.refreshControl isDescendantOfView:[self tableView]] == NO)
     {
         return;
     }
     
-    [refreshControl beginRefreshing];
+    [self.refreshControl beginRefreshing];
     
     if ([self.proxy _hasListeners:@"refreshstart"])
     {
@@ -75,12 +84,12 @@ ISRefreshControl *refreshControl;
 
 -(void)refreshBegin:(id)args
 {
-    if ([refreshControl isDescendantOfView:[self tableView]] == NO)
+    if ([self.refreshControl isDescendantOfView:[self tableView]] == NO)
     {
         return;
     }
     
-    if (refreshControl.isRefreshing == NO)
+    if (self.refreshControl.isRefreshing == NO)
     {
         [self refreshStart];        
     }
@@ -88,14 +97,14 @@ ISRefreshControl *refreshControl;
 
 -(void)refreshFinish:(id)args
 {
-    if ([refreshControl isDescendantOfView:[self tableView]] == NO)
+    if ([self.refreshControl isDescendantOfView:[self tableView]] == NO)
     {
         return;
     }
     
-    if (refreshControl.isRefreshing == YES)
+    if (self.refreshControl.isRefreshing == YES)
     {
-        [refreshControl endRefreshing];
+        [self.refreshControl endRefreshing];
         
         if ([self.proxy _hasListeners:@"refreshend"])
         {
@@ -106,7 +115,7 @@ ISRefreshControl *refreshControl;
 
 -(id)isRefreshing:(id)args
 {
-    return NUMBOOL(refreshControl.isRefreshing);
+    return NUMBOOL(self.refreshControl.isRefreshing);
 }
 
 @end

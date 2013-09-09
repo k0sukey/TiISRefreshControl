@@ -12,6 +12,8 @@
 
 @interface TiUITableView (TiUITableView_ISRefreshControl)
 
+@property (nonatomic, retain) ISRefreshControl *refreshControl;
+
 -(void)setRefreshControlTintColor_:(id)args;
 -(void)setRefreshControlEnabled_:(id)args;
 
