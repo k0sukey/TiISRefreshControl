@@ -22,6 +22,14 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		23F7410917E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F7410717E1871B0012AD4F /* TiUIScrollView+ISRefreshControl.h */; };
+		23F7410A17E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7410817E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.m */; };
+		23F7410D17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F7410B17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.h */; };
+		23F7410E17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7410C17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.m */; };
+		23F7411117E19B560012AD4F /* TiUIWebView+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F7410F17E19B560012AD4F /* TiUIWebView+ISRefreshControl.h */; };
+		23F7411217E19B560012AD4F /* TiUIWebView+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7411017E19B560012AD4F /* TiUIWebView+ISRefreshControl.m */; };
+		23F7411517E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F7411317E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.h */; };
+		23F7411617E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7411417E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.m */; };
 		23F9A04A17C1B33B004E8028 /* ISGumView.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A03217C1AC75004E8028 /* ISGumView.h */; };
 		23F9A04B17C1B33E004E8028 /* ISGumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A03317C1AC75004E8028 /* ISGumView.m */; };
 		23F9A04C17C1B344004E8028 /* ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A03417C1AC75004E8028 /* ISRefreshControl.h */; };
@@ -65,6 +73,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23F7410717E1871B0012AD4F /* TiUIScrollView+ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUIScrollView+ISRefreshControl.h"; path = "Classes/TiUIScrollView+ISRefreshControl.h"; sourceTree = "<group>"; };
+		23F7410817E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUIScrollView+ISRefreshControl.m"; path = "Classes/TiUIScrollView+ISRefreshControl.m"; sourceTree = "<group>"; };
+		23F7410B17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUIScrollViewProxy+ISRefreshControl.h"; path = "Classes/TiUIScrollViewProxy+ISRefreshControl.h"; sourceTree = "<group>"; };
+		23F7410C17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUIScrollViewProxy+ISRefreshControl.m"; path = "Classes/TiUIScrollViewProxy+ISRefreshControl.m"; sourceTree = "<group>"; };
+		23F7410F17E19B560012AD4F /* TiUIWebView+ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUIWebView+ISRefreshControl.h"; path = "Classes/TiUIWebView+ISRefreshControl.h"; sourceTree = "<group>"; };
+		23F7411017E19B560012AD4F /* TiUIWebView+ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUIWebView+ISRefreshControl.m"; path = "Classes/TiUIWebView+ISRefreshControl.m"; sourceTree = "<group>"; };
+		23F7411317E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUIWebViewProxy+ISRefreshControl.h"; path = "Classes/TiUIWebViewProxy+ISRefreshControl.h"; sourceTree = "<group>"; };
+		23F7411417E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUIWebViewProxy+ISRefreshControl.m"; path = "Classes/TiUIWebViewProxy+ISRefreshControl.m"; sourceTree = "<group>"; };
 		23F9A03017C1AC75004E8028 /* ISRefresgControlIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ISRefresgControlIcon.png; sourceTree = "<group>"; };
 		23F9A03117C1AC75004E8028 /* ISRefresgControlIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ISRefresgControlIcon@2x.png"; sourceTree = "<group>"; };
 		23F9A03217C1AC75004E8028 /* ISGumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISGumView.h; sourceTree = "<group>"; };
@@ -159,6 +175,14 @@
 				23F9A05F17C1CC75004E8028 /* TiUIListView+ISRefreshControl.m */,
 				23F9A06217C1CC90004E8028 /* TiUIListViewProxy+ISRefreshControl.h */,
 				23F9A06317C1CC90004E8028 /* TiUIListViewProxy+ISRefreshControl.m */,
+				23F7410717E1871B0012AD4F /* TiUIScrollView+ISRefreshControl.h */,
+				23F7410817E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.m */,
+				23F7410B17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.h */,
+				23F7410C17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.m */,
+				23F7410F17E19B560012AD4F /* TiUIWebView+ISRefreshControl.h */,
+				23F7411017E19B560012AD4F /* TiUIWebView+ISRefreshControl.m */,
+				23F7411317E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.h */,
+				23F7411417E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -235,6 +259,10 @@
 				23F9A06417C1CC91004E8028 /* TiUIListViewProxy+ISRefreshControl.h in Headers */,
 				23F9A08817C262A0004E8028 /* TiUITableViewProxy+ISRefreshControl.h in Headers */,
 				23F9A08A17C262AD004E8028 /* TiUITableView+ISRefreshControl.h in Headers */,
+				23F7410917E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.h in Headers */,
+				23F7410D17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.h in Headers */,
+				23F7411117E19B560012AD4F /* TiUIWebView+ISRefreshControl.h in Headers */,
+				23F7411517E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +349,10 @@
 				23F9A06517C1CC91004E8028 /* TiUIListViewProxy+ISRefreshControl.m in Sources */,
 				23F9A08717C2629D004E8028 /* TiUITableViewProxy+ISRefreshControl.m in Sources */,
 				23F9A08917C262AB004E8028 /* TiUITableView+ISRefreshControl.m in Sources */,
+				23F7410A17E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.m in Sources */,
+				23F7410E17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.m in Sources */,
+				23F7411217E19B560012AD4F /* TiUIWebView+ISRefreshControl.m in Sources */,
+				23F7411617E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

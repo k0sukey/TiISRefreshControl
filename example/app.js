@@ -37,7 +37,7 @@ tableView.addEventListener('refreshstart', function(){
 	}, 5000);
 });
 */
-
+/*
 var listView = Ti.UI.createListView({
 	refreshControlEnabled: false
 });
@@ -94,5 +94,56 @@ listView.addEventListener('refreshstart', function(){
 console.log('isRefreshing: ' + listView.isRefreshing());
 
 listView.refreshBegin();
+*/
+
+/*
+var scrollView = Ti.UI.createScrollView({
+	refreshControlEnabled: true,
+	backgroundColor: '#fff'
+});
+win.add(scrollView);
+
+scrollView.add(Ti.UI.createView({
+	top: 0,
+	left: 0,
+	width: 100,
+	height: 1000,
+	backgroundColor: '#f00'
+}));
+
+scrollView.addEventListener('refreshstart', function(){
+	console.log('isRefreshing: ' + scrollView.isRefreshing());
+	setTimeout(function(){
+		scrollView.refreshFinish();
+
+		setTimeout(function(){
+			console.log('isRefreshing: ' + scrollView.isRefreshing());
+		}, 5000);
+	}, 5000);
+});
+console.log('isRefreshing: ' + scrollView.isRefreshing());
+
+scrollView.refreshBegin();
+*/
+
+var webView = Ti.UI.createWebView({
+	refreshControlEnabled: true,
+	url: 'http://www.appcelerator.com'
+});
+win.add(webView);
+
+webView.addEventListener('refreshstart', function(){
+	console.log('isRefreshing: ' + webView.isRefreshing());
+	setTimeout(function(){
+		webView.refreshFinish();
+
+		setTimeout(function(){
+			console.log('isRefreshing: ' + webView.isRefreshing());
+		}, 5000);
+	}, 5000);
+});
+console.log('isRefreshing: ' + webView.isRefreshing());
+
+webView.refreshBegin();
 
 win.open();

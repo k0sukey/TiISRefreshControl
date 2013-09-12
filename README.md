@@ -1,13 +1,13 @@
 ## TiISRefreshControl
 
-Wrapping [ISRefreshControl](https://github.com/ishkawa/ISRefreshControl) for Ti.UI.TableView and Ti.UI.ListView on Titanium Mobile.
+Wrapping [ISRefreshControl](https://github.com/ishkawa/ISRefreshControl) for Ti.UI.TableView, Ti.UI.ListView, Ti.UI.ScrollView and Ti.UI.WebView on Titanium Mobile.
 
 ISRefreshControl is iOS4-compatible UIRefreshControl.
 
 ![image](TiISRefreshControl.png)
 
 ## Feature
-* Support the UIRefreshControl for Ti.UI.TableView and Ti.UI.ListView on iOS6
+* Support the UIRefreshControl for Ti.UI.TableView, Ti.UI.ListView, Ti.UI.ScrollView and Ti.UI.WebView on iOS6
 * Compatible UIRefreshControl on iOS4 and iOS5
 
 ## Install

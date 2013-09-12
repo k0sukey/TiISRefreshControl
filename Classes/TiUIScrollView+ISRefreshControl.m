@@ -4,10 +4,10 @@
  * Licensed under the terms of the Apache Public License
  * Please see the LICENSE included with this distribution for details.
  */
-#import "TiUIListView+ISRefreshControl.h"
+#import "TiUIScrollView+ISRefreshControl.h"
 #import <objc/runtime.h>
 
-@implementation TiUIListView (TiUIListView_ISRefreshControl)
+@implementation TiUIScrollView (TiUIScrollView_ISRefreshControl)
 
 -(void)setRefreshControl:(ISRefreshControl *)refreshControl
 {
@@ -53,14 +53,14 @@
     
     if (val == YES)
     {
-        if ([self.refreshControl isDescendantOfView:[self tableView]] == NO)
+        if ([self.refreshControl isDescendantOfView:[self scrollView]] == NO)
         {
-            [[self tableView] addSubview:self.refreshControl];
+            [[self scrollView] addSubview:self.refreshControl];
         }
     }
     else
     {
-        if ([self.refreshControl isDescendantOfView:[self tableView]] == YES)
+        if ([self.refreshControl isDescendantOfView:[self scrollView]] == YES)
         {
             [self.refreshControl removeFromSuperview];
         }
@@ -69,7 +69,7 @@
 
 -(void)refreshStart
 {
-    if ([self.refreshControl isDescendantOfView:[self tableView]] == NO)
+    if ([self.refreshControl isDescendantOfView:[self scrollView]] == NO)
     {
         return;
     }
@@ -84,20 +84,20 @@
 
 -(void)refreshBegin:(id)args
 {
-    if ([self.refreshControl isDescendantOfView:[self tableView]] == NO)
+    if ([self.refreshControl isDescendantOfView:[self scrollView]] == NO)
     {
         return;
     }
     
     if (self.refreshControl.isRefreshing == NO)
     {
-        [self refreshStart];        
+        [self refreshStart];
     }
 }
 
 -(void)refreshFinish:(id)args
 {
-    if ([self.refreshControl isDescendantOfView:[self tableView]] == NO)
+    if ([self.refreshControl isDescendantOfView:[self scrollView]] == NO)
     {
         return;
     }
