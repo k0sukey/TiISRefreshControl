@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A9A0C38E-EFC6-46BC-A0A8-0996A7FECA99</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TiISRefreshControl</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>02FEE501-B5AC-42A3-B9A9-D90D3B2CB801</key>
+		<string>ssh://github.com/ishkawa/ISRefreshControl.git</string>
+		<key>F47B3A22-38EE-4D51-BD5F-4AEC66B367C9</key>
+		<string>ssh://github.com/k0sukey/TiISRefreshControl.git</string>
+		<key>FF940156-A608-4CC7-A4BA-C5E7AB9C8B93</key>
+		<string>ssh://github.com/ishkawa/ISMethodSwizzling.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TiISRefreshControl.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>02FEE501-B5AC-42A3-B9A9-D90D3B2CB801</key>
+		<string>../../ISRefreshControl</string>
+		<key>F47B3A22-38EE-4D51-BD5F-4AEC66B367C9</key>
+		<string>../..</string>
+		<key>FF940156-A608-4CC7-A4BA-C5E7AB9C8B93</key>
+		<string>../../ISMethodSwizzling</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/k0sukey/TiISRefreshControl.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F47B3A22-38EE-4D51-BD5F-4AEC66B367C9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FF940156-A608-4CC7-A4BA-C5E7AB9C8B93</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ISMethodSwizzling</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>02FEE501-B5AC-42A3-B9A9-D90D3B2CB801</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ISRefreshControl</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F47B3A22-38EE-4D51-BD5F-4AEC66B367C9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TiISRefreshControl</string>
+		</dict>
+	</array>
+</dict>
+</plist>

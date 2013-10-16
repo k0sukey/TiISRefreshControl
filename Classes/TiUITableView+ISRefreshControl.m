@@ -27,8 +27,8 @@
     {
         self.refreshControl = (id)[[ISRefreshControl alloc] init];
         [self.refreshControl addTarget:self
-                           action:@selector(refreshStart)
-                 forControlEvents:UIControlEventValueChanged];
+                                action:@selector(refreshStart)
+                      forControlEvents:UIControlEventValueChanged];
     }
 }
 
