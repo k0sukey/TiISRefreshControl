@@ -2,9 +2,10 @@ var TiISRefreshControl = require('be.k0suke.tiisrefreshcontrol');
 Ti.API.info("module is => " + TiISRefreshControl);
 
 var win = Ti.UI.createWindow();
-/*
+
 var tableView = Ti.UI.createTableView({
-	refreshControlEnabled: false,
+	refreshControlEnabled: true,
+	refreshControlBackgroundColor: '#f00',
 	data: [
 		{ title: 'row0' },
 		{ title: 'row1' },
@@ -20,13 +21,13 @@ var tableView = Ti.UI.createTableView({
 });
 win.add(tableView);
 
-var enabled = false;
+var enabled = true;
 tableView.addEventListener('click', function(){
 	if (enabled) {
-		tableView.setRefreshControlEnabled(false);
+		tableView.setRefreshControlBackgroundColor(null);
 		enabled = false;
 	} else {
-		tableView.setRefreshControlEnabled(true);
+		tableView.setRefreshControlBackgroundColor('#00f');
 		enabled = true;
 	}
 });
@@ -36,7 +37,7 @@ tableView.addEventListener('refreshstart', function(){
 		tableView.refreshFinish();
 	}, 5000);
 });
-*/
+
 /*
 var listView = Ti.UI.createListView({
 	refreshControlEnabled: false
@@ -126,6 +127,7 @@ console.log('isRefreshing: ' + scrollView.isRefreshing());
 scrollView.refreshBegin();
 */
 
+/* TiUIWebView
 var webView = Ti.UI.createWebView({
 	refreshControlEnabled: true,
 	url: 'http://www.appcelerator.com'
@@ -145,5 +147,5 @@ webView.addEventListener('refreshstart', function(){
 console.log('isRefreshing: ' + webView.isRefreshing());
 
 webView.refreshBegin();
-
+*/
 win.open();

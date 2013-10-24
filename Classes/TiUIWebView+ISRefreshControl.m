@@ -34,24 +34,30 @@
 
 -(void)dealloc
 {
+    RELEASE_TO_NIL(self.refreshControl);
+    
     [super dealloc];
 }
 
 -(void)setRefreshControlTintColor_:(id)args
 {
-    TiColor *val = [TiUtils colorValue:args];
+    TiColor *tintColor = [TiUtils colorValue:args];
     
-    if (val != nil)
+    if (tintColor == nil)
     {
-        self.refreshControl.tintColor = [[val _color] retain];
+        self.refreshControl.tintColor = nil;
+    }
+    else
+    {
+        self.refreshControl.tintColor = [[tintColor _color] retain];
     }
 }
 
 -(void)setRefreshControlEnabled_:(id)args
 {
-    BOOL val = [TiUtils boolValue:args def:YES];
+    BOOL enabled = [TiUtils boolValue:args def:NO];
     
-    if (val == YES)
+    if (enabled == YES)
     {
         if ([self.refreshControl isDescendantOfView:[self scrollview]] == NO)
         {

@@ -13,8 +13,10 @@
 @interface TiUIScrollView (TiUIScrollView_ISRefreshControl)
 
 @property (nonatomic, retain) ISRefreshControl *refreshControl;
+@property (nonatomic, retain) UIView *refreshControlBackgroundView;
 
 -(void)setRefreshControlTintColor_:(id)args;
+-(void)setRefreshControlBackgroundColor_:(id)args;
 -(void)setRefreshControlEnabled_:(id)args;
 
 -(void)refreshBegin:(id)args;

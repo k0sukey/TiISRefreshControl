@@ -19,6 +19,16 @@
     return objc_getAssociatedObject(self, @selector(refreshControl));
 }
 
+-(void)setRefreshControlBackgroundView:(UIView *)refreshControlBackgroundView
+{
+    objc_setAssociatedObject(self, @selector(refreshControlBackgroundView), refreshControlBackgroundView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(UIView *)refreshControlBackgroundView
+{
+    return objc_getAssociatedObject(self, @selector(refreshControlBackgroundView));
+}
+
 -(void)initializeState
 {
     [super initializeState];
@@ -32,26 +42,80 @@
     }
 }
 
+-(void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds
+{
+    if (self.refreshControlBackgroundView != nil)
+    {
+        self.refreshControlBackgroundView.frame = CGRectMake(0.0f,
+                                                             0.0f - bounds.size.height,
+                                                             bounds.size.width,
+                                                             bounds.size.height);
+    }
+}
+
 -(void)dealloc
 {
+    RELEASE_TO_NIL(self.refreshControl);
+    RELEASE_TO_NIL(self.refreshControlBackgroundView);
+    
     [super dealloc];
 }
 
 -(void)setRefreshControlTintColor_:(id)args
 {
-    TiColor *val = [TiUtils colorValue:args];
+    TiColor *tintColor = [TiUtils colorValue:args];
     
-    if (val != nil)
+    if (tintColor == nil)
     {
-        self.refreshControl.tintColor = [[val _color] retain];
+        self.refreshControl.tintColor = nil;
+    }
+    else
+    {
+        self.refreshControl.tintColor = [[tintColor _color] retain];
+    }
+}
+
+-(void)setRefreshControlBackgroundColor_:(id)args
+{
+    TiColor *backgroundColor = [TiUtils colorValue:args];
+    
+    if (backgroundColor == nil)
+    {
+        if (self.refreshControlBackgroundView != nil)
+        {
+            [self.refreshControlBackgroundView removeFromSuperview];
+            RELEASE_TO_NIL(self.refreshControlBackgroundView);
+        }
+    }
+    else
+    {
+        CGRect frame = [self tableView].frame;
+        
+        if (frame.size.width == 0)
+        {
+            [self performSelector:@selector(setRefreshControlBackgroundColor_:)
+                       withObject:args
+                       afterDelay:0.1];
+            return;
+        }
+        
+        CGRect bounds = [self tableView].bounds;
+        
+        self.refreshControlBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0.0f,
+                                                                                     0.0f - bounds.size.height,
+                                                                                     bounds.size.width,
+                                                                                     bounds.size.height)];
+        self.refreshControlBackgroundView.backgroundColor = [[backgroundColor _color] retain];
+        [[self tableView] insertSubview:self.refreshControlBackgroundView
+                           belowSubview:self.refreshControl];
     }
 }
 
 -(void)setRefreshControlEnabled_:(id)args
 {
-    BOOL val = [TiUtils boolValue:args def:YES];
+    BOOL enabled = [TiUtils boolValue:args def:NO];
     
-    if (val == YES)
+    if (enabled == YES)
     {
         if ([self.refreshControl isDescendantOfView:[self tableView]] == NO)
         {

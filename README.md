@@ -6,12 +6,15 @@ ISRefreshControl is iOS4-compatible UIRefreshControl.
 
 ![image](TiISRefreshControl.png)
 
+## IMPORTANT CHANGES
+* refreshControlEnabled default false, [old version](be.k0suke.tiisrefreshcontrol-iphone-0.1.zip) default ture
+
 ## Feature
 * Support the UIRefreshControl for Ti.UI.TableView, Ti.UI.ListView, Ti.UI.ScrollView and Ti.UI.WebView on iOS6
 * Compatible UIRefreshControl on iOS4 and iOS5
 
 ## Install
-[Compiled module download](be.k0suke.tiisrefreshcontrol-iphone-0.1.zip)
+[Compiled module download](be.k0suke.tiisrefreshcontrol-iphone-0.2.zip)
 
 ```
 $ git clone git@github.com:k0sukey/TiISRefreshControl.git
@@ -42,6 +45,7 @@ This is a very simply :D
 var tableView = Ti.UI.createTableView({
 	refreshControlEnabled: true, // optional
 	refreshControlTintColor: '#f00', // optional
+	refreshControlBackgroundColor: '#00f', // optional
 	data: [
 		{ title: 'row0' },
 		{ title: 'row1' },
@@ -119,12 +123,18 @@ TiISRefreshControl enable or disable.
 #### refreshControlTintColor
 The tint color for the refresh control.
 
+#### refreshControlBackgroundColor
+The background color for the refresh control.
+
 ### Methods
 #### getRefreshControlEnabled / setRefreshControlEnabled
 getter / setter for refreshControlEnabled.
 
 #### getRefreshControlTintColor / setRefreshControlTintColor
 getter / setter for refreshControlTintColor.
+
+#### getRefreshControlBackgroundColor / setRefreshControlBackgroundColor
+getter / setter for refreshControlBackgroundColor.
 
 #### isRefreshing
 A Boolean value indicating whether a refresh operation has been triggered and is in progress.
