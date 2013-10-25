@@ -126,10 +126,10 @@ console.log('isRefreshing: ' + scrollView.isRefreshing());
 
 scrollView.refreshBegin();
 */
-
-/* TiUIWebView
+/*
 var webView = Ti.UI.createWebView({
 	refreshControlEnabled: true,
+	refreshControlBackgroundColor: '#00f',
 	url: 'http://www.appcelerator.com'
 });
 win.add(webView);
