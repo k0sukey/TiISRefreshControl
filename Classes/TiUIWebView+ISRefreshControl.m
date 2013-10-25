@@ -94,7 +94,7 @@
     else
     {
         CGRect frame = self.frame;
-        NSLog(@"frame size width: %f, height: %f", frame.size.width, frame.size.height);
+        
         if (frame.size.width == 0)
         {
             [self performSelector:@selector(setRefreshControlBackgroundColor_:)
@@ -104,7 +104,7 @@
         }
         
         CGRect bounds = self.bounds;
-        NSLog(@"bounds size width: %f, height: %f", bounds.size.width, bounds.size.height);
+        
         self.refreshControlBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0.0f,
                                                                                      0.0f - bounds.size.height,
                                                                                      bounds.size.width,
