@@ -46,16 +46,19 @@
     }
 }
 
--(void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds
+/*-(void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds
 {
     if (self.refreshControlBackgroundView != nil)
     {
+        [self.refreshControlBackgroundView removeFromSuperview];
+        RELEASE_TO_NIL(self.refreshControlBackgroundView);
+
         self.refreshControlBackgroundView.frame = CGRectMake(0.0f,
                                                              0.0f - bounds.size.height,
                                                              bounds.size.width,
                                                              bounds.size.height);
     }
-}
+}*/
 
 -(void)dealloc
 {

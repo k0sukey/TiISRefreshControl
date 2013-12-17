@@ -22,14 +22,14 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		23712947186015E0004E7FF5 /* TiUIWebViewProxy+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7411417E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.m */; };
+		23712948186015E4004E7FF5 /* TiUIWebViewProxy+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F7411317E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.h */; };
+		23712949186015E9004E7FF5 /* TiUIWebView+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7411017E19B560012AD4F /* TiUIWebView+ISRefreshControl.m */; };
+		2371294A186015EC004E7FF5 /* TiUIWebView+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F7410F17E19B560012AD4F /* TiUIWebView+ISRefreshControl.h */; };
 		23F7410917E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F7410717E1871B0012AD4F /* TiUIScrollView+ISRefreshControl.h */; };
 		23F7410A17E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7410817E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.m */; };
 		23F7410D17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F7410B17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.h */; };
 		23F7410E17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7410C17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.m */; };
-		23F7411117E19B560012AD4F /* TiUIWebView+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F7410F17E19B560012AD4F /* TiUIWebView+ISRefreshControl.h */; };
-		23F7411217E19B560012AD4F /* TiUIWebView+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7411017E19B560012AD4F /* TiUIWebView+ISRefreshControl.m */; };
-		23F7411517E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F7411317E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.h */; };
-		23F7411617E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7411417E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.m */; };
 		23F9A04A17C1B33B004E8028 /* ISGumView.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A03217C1AC75004E8028 /* ISGumView.h */; };
 		23F9A04B17C1B33E004E8028 /* ISGumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A03317C1AC75004E8028 /* ISGumView.m */; };
 		23F9A04C17C1B344004E8028 /* ISRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F9A03417C1AC75004E8028 /* ISRefreshControl.h */; };
@@ -258,11 +258,11 @@
 				23F9A06017C1CC76004E8028 /* TiUIListView+ISRefreshControl.h in Headers */,
 				23F9A06417C1CC91004E8028 /* TiUIListViewProxy+ISRefreshControl.h in Headers */,
 				23F9A08817C262A0004E8028 /* TiUITableViewProxy+ISRefreshControl.h in Headers */,
+				23712948186015E4004E7FF5 /* TiUIWebViewProxy+ISRefreshControl.h in Headers */,
 				23F9A08A17C262AD004E8028 /* TiUITableView+ISRefreshControl.h in Headers */,
 				23F7410917E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.h in Headers */,
 				23F7410D17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.h in Headers */,
-				23F7411117E19B560012AD4F /* TiUIWebView+ISRefreshControl.h in Headers */,
-				23F7411517E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.h in Headers */,
+				2371294A186015EC004E7FF5 /* TiUIWebView+ISRefreshControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,11 +339,13 @@
 				24DD6CFA1134B3F500162E58 /* BeK0sukeTiisrefreshcontrolModule.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* BeK0sukeTiisrefreshcontrolModuleAssets.m in Sources */,
 				23F9A04B17C1B33E004E8028 /* ISGumView.m in Sources */,
+				23712947186015E0004E7FF5 /* TiUIWebViewProxy+ISRefreshControl.m in Sources */,
 				23F9A04D17C1B347004E8028 /* ISRefreshControl.m in Sources */,
 				23F9A04F17C1B35B004E8028 /* ISScalingActivityIndicatorView.m in Sources */,
 				23F9A05117C1B362004E8028 /* UIColor+ISRefreshControl.m in Sources */,
 				23F9A05317C1B36B004E8028 /* UITableView+ISRefreshControl.m in Sources */,
 				23F9A05517C1B373004E8028 /* UITableViewController+ISRefreshControl.m in Sources */,
+				23712949186015E9004E7FF5 /* TiUIWebView+ISRefreshControl.m in Sources */,
 				23F9A05C17C1BA39004E8028 /* ISMethodSwizzling.m in Sources */,
 				23F9A06117C1CC76004E8028 /* TiUIListView+ISRefreshControl.m in Sources */,
 				23F9A06517C1CC91004E8028 /* TiUIListViewProxy+ISRefreshControl.m in Sources */,
@@ -351,8 +353,6 @@
 				23F9A08917C262AB004E8028 /* TiUITableView+ISRefreshControl.m in Sources */,
 				23F7410A17E1871C0012AD4F /* TiUIScrollView+ISRefreshControl.m in Sources */,
 				23F7410E17E187300012AD4F /* TiUIScrollViewProxy+ISRefreshControl.m in Sources */,
-				23F7411217E19B560012AD4F /* TiUIWebView+ISRefreshControl.m in Sources */,
-				23F7411617E19B6F0012AD4F /* TiUIWebViewProxy+ISRefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
