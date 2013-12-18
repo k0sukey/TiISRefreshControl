@@ -1,242 +1,163 @@
----
-title: Titanium Advent Calendar 2013
-date: 2013-12-13 08:34 JST
-tags: Titanium, Android, Advent Calendar 2013
-author: いそべこーすけ
-twitter: k0sukey
-facebook: k0sukey
-github: k0sukey
----
+## TiISRefreshControl
 
-こちらは [Titanium™ Advent Calendar 2013](http://www.adventar.org/calendars/78) 用の記事になります。
-余談ですが、企画された [@astronaughts](https://twitter.com/astronaughts) さんと、最近 Facebook で友達になりました。
-やったね！
+Wrapping [ISRefreshControl](https://github.com/ishkawa/ISRefreshControl) for Ti.UI.TableView, Ti.UI.ListView, Ti.UI.ScrollView and Ti.UI.WebView on Titanium Mobile.
 
-### はじめに
-ぼくもちょこっとポエムを書かせてもらうと、今年は自分にとって大きな大きな 1 年でした。
-JavaScript で iOS / Android アプリが書けちゃうなんて！と、ゆるい気持ちで使い始めたのですが、なんと会社まで立ち上げて Titanium 三昧でございます（最近はモジュールばかり書いていますけど）。
-人生どうなるかわかりませんね。
+ISRefreshControl is iOS4-compatible UIRefreshControl.
 
-### それでは本題に
+![image](TiISRefreshControl.png)
 
-外部ウェブサービス API へ POST する際、JSON の中身が意図されている順序で送信しないと受け付けられない場合があります。
-AWS S3 へ直接ファイルをアップロードする場合等がそれですね。
+## IMPORTANT CHANGES
+* refreshControlEnabled default false, [old version](be.k0suke.tiisrefreshcontrol-iphone-0.1.zip) default ture
 
-iOS の場合は ```Ti.Network.HTTPClient``` の ```send()``` メソッドで意図されている順序の JSON を渡せばその順序で送信されますが、Android の場合そうはいきません。
-[Titanium](https://github.com/appcelerator/titanium_mobile/blob/master/android/modules/network/src/java/ti/modules/titanium/network/TiHTTPClient.java#L1095) のソースコードを見てみると、Android の ```send()``` メソッドは ```HashMap``` で受け取っているため JSON の順序が保持されていません。
-```LinkedHashMap``` であれば保持されるそうで、この問題は起きないのですがいつかこちらに切り替わるのでしょうか（期待できません）。
+## Feature
+* Support the UIRefreshControl for Ti.UI.TableView, Ti.UI.ListView, Ti.UI.ScrollView and Ti.UI.WebView on iOS6
+* Compatible UIRefreshControl on iOS4 and iOS5
 
-と、言うわけで、意図した通りの順序の JSON を送信する方法を探ってみましょう。
-ここでは S3 へ直接ファイルをアップロードする方法を例にあげます。
+## Install
+[Compiled module download](be.k0suke.tiisrefreshcontrol-iphone-0.2.zip)
 
-#### まずはいつも通り ```Ti.Network.HTTPClient``` で ```send()``` する際に JSON を渡してしてみます
-file はカメラで撮影した写真のデータ（```Ti.Blob```）が格納されており、その他、各変数は S3 へアップロードするために必要な情報となります。
+```
+$ git clone git@github.com:k0sukey/TiISRefreshControl.git
+$ cd TiISRefreshControl
+$ git submodule init
+$ git submodule update
+```
 
-	var xhr = Ti.Netwrok.createHTTPClient({
-		onload: function(){},
-		onerror: function(){}
+Open TiISRefreshControl.xcodeproj and edit the ISRefreshControl/ISGumView.m at line:46
+
+```
+// self.imageView.image = [UIImage imageNamed:@"ISRefresgControlIcon"];
+self.imageView.image = [UIImage imageNamed:@"modules/be.k0suke.tiisrefreshcontrol/ISRefresgControlIcon.png"];
+```
+
+Execute build.py
+
+```
+$ ./build.py
+```
+
+## Usage
+There is no need a lot of event handling for pull-to-refresh.
+This is a very simply :D
+
+### Classic style(for Ti.UI.TableView)
+```
+var tableView = Ti.UI.createTableView({
+	refreshControlEnabled: true, // optional
+	refreshControlTintColor: '#f00', // optional
+	refreshControlBackgroundColor: '#00f', // optional
+	data: [
+		{ title: 'row0' },
+		{ title: 'row1' },
+		{ title: 'row2' },
+		{ title: 'row3' },
+		{ title: 'row4' },
+		{ title: 'row5' },
+		{ title: 'row6' },
+		{ title: 'row7' },
+		{ title: 'row8' },
+		{ title: 'row9' }
+	]
+});
+
+tableView.addEventListener('refreshstart', function(){
+	setTimeout(function(){
+		tableView.refreshFinish();
+	}, 5000);
+});
+```
+
+### Alloy(for Ti.UI.ListView and data binding)
+#### View
+```
+<Window>
+	<ListView id="lists" defaultItemTemplate="list">
+		<Templates>
+			<ItemTemplate name="list">
+				<Label bindId="name" class="name"/>
+			</ItemTemplate>
+		</Templates>
+
+		<ListSection id="section" dataCollection="lists" dataTransform="doTransform">
+			<ListItem template="list" name:text="{name}"/>
+		</ListSection>
+	</ListView>
+</Window>
+```
+
+#### Controller
+```
+var lists = Alloy.Collections.lists;
+
+function doTransform(model) {
+	return model.toJSON();
+}
+
+$.lists.addEventListener('refreshstart', function(){
+	lists.fetch({
+		success: function(){
+			$.lists.refreshFinish();
+		},
+		error: function(){
+			$.lists.refreshFinish();
+		}
 	});
-	xhr.open(url, 'POST');
-	xhr.send({
-		"key": key,
-		"AWSAccessKeyId": AWSAccessKeyId,
-		"acl": acl,
-		"Content-Disposition": ContentDisposition,
-		"Content-Type": ContentType,
-		"success_action_redirect": successActionRedirect,
-		"x-amz-server-side-encryption": xAmzServerSideEncryption,
-		"policy": policy,
-		"signature": signature,
-		"file": file
-	});
+});
 
-iOS はこれで問題なくアップロードできます。
-key から始まって file まで ```send()```メソッドへ渡した際、JSON の順序が保持されているからです。
-Android の場合は S3 から順序が正しくないとエラーが返却されてきます。
-悲しいですね。
+$.index.addEventListener('open', function(){
+	$.lists.refreshBegin();
+});
 
-[リファレンス](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.Network.HTTPClient-method-send)を見てみましょう。
-```send()``` メソッドは ```Object``` / ```String``` / ```Ti.Filesystem.File``` / ```Ti.Blob``` を指定することができます。
-上記の例では JSON、つまり、```Object``` ですね。
+$.index.open();
+```
 
-#### Android で順序を保持したデータを渡すには HTTP リクエストの中身を自分で記述していきます
+#### alloy.js
+```
+var lists = Alloy.Collections.lists = Alloy.createCollection('lists');
+```
 
-早速 JSON から離れますが ```String``` で送信してみます。
+### Properties
+#### refreshControlEnabled
+TiISRefreshControl enable or disable.
 
-送信データを自前で記述する場合はいくつかのお作法があります。
-ファイルを送信するのでリクエストヘッダは ```Content-Type: multipart/form-data``` となります（JSON で渡した場合は ```Ti.Blob``` が入っていると、このヘッダを勝手につけてくれます）。
-さらに送信する内容一つずつに自前で区切りのサインを付けていかないとなりません。
-下記の例では ```boundary``` という変数で用意しております。
-こちらは任意の文字列となりますが、頭に必ず ```--``` を付けてください。
-例ではタイムスタンプを ```Ti.Utils.md5HexDigest()``` しています。
-また、一番最後の区切りには末尾にも ```--``` が必要となります。
-改行コード（```\r\n```）も自分で記述しないといけません。
-とても面倒ですね...。
+#### refreshControlTintColor
+The tint color for the refresh control.
 
-	// 区切り文字
-	var boundary = Ti.Utils.md5HexDigest('' + Date.now());
+#### refreshControlBackgroundColor
+The background color for the refresh control.
 
-	// 写真を Ti.Stream で開いて Ti.Buffer 化
-	var stream = Ti.Stream.createStream({
-		mode : Ti.Stream.MODE_READ,
-		source: file
-	});
-	var buffer = Ti.Stream.readAll(stream);
-	stream.close();
+### Methods
+#### getRefreshControlEnabled / setRefreshControlEnabled
+getter / setter for refreshControlEnabled.
 
-	// 送信データを文字列で組み立てる
-	var data = '--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="key"\r\n\r\n' +
-		key + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="AWSAccessKeyId"\r\n\r\n' +
-		AWSAccessKeyId + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="acl"\r\n\r\n' +
-		acl + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="Content-Disposition"\r\n\r\n' +
-		ContentDisposition + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="Content-Type"\r\n\r\n' +
-		ContentType + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="success_action_redirect"\r\n\r\n' +
-		successActionRedirect + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="x-amz-server-side-encryption"\r\n\r\n' +
-		xAmzServerSideEncryption + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="policy"\r\n\r\n' +
-		policy + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="signature"\r\n\r\n' +
-		signature + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="file"; filename="image.jpg"\r\n' +
-		'Content-Type: binary/octet-stream\r\n\r\n' +
-		buffer.toString() + '\r\n' + // Ti.Buffer を文字列化
-		'--' + boundary + '--\r\n';
+#### getRefreshControlTintColor / setRefreshControlTintColor
+getter / setter for refreshControlTintColor.
 
-	// 送信
-	var xhr = Ti.Netwrok.createHTTPClient({
-		onload: function(){},
-		onerror: function(){}
-	});
-	xhr.open(url, 'POST');
-	xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary);
-	xhr.send(data);
+#### getRefreshControlBackgroundColor / setRefreshControlBackgroundColor
+getter / setter for refreshControlBackgroundColor.
 
-写真データのファイルを ```Ti.Stream``` で開いて、```readAll()``` で全て読み込んで ```Ti.Buffer``` にし、```toString()``` で文字列化しています。
-これでどうでしょうか。
+#### isRefreshing
+A Boolean value indicating whether a refresh operation has been triggered and is in progress.
 
-アップロードは成功しますが、画像ファイルの ```Ti.Buffer``` を ```toString()``` するとゴミが付くらしく、ファイルが壊れてしまいます（自前のサーバにアップロードしたファイルをバイナリエディタで開いて正常な画像と比較して確認しました）。
-これでは意味がありませんね。
+#### refreshBegin
+Tells the control that a refresh operation was started programmatically.
 
-メールをプログラムから送信したことがある方は、似たような記述をしますのでピンときたかと思います。
-```Ti.Buffer``` が ```toString()``` すると壊れてしまうのなら、```Ti.Blob``` なファイルを ```Ti.Utils.base64encode().toString()``` し、```Content-Transfer-Encoding: base64``` を付けて Base64 で送れば良いじゃない、と。
-こんな感じですかね。
+#### refreshFinish
+Tells the control that a refresh operation has ended.
 
-		'Content-Disposition: form-data; name="file"; filename="image.jpg"\r\n' +
-		'Content-Type: binary/octet-stream\r\n' +
-		'Content-Transfer-Encoding: base64\r\n\r\n' +
-		Ti.Utils.base64encode(file).toString() + '\r\n' +
-		'--' + boundary + '--\r\n';
+### Events
+#### refreshstart
+Refresh starting event.
 
-...そもそも ```Content-Transfer-Encoding``` は[メール用](https://forums.aws.amazon.com/thread.jspa?threadID=108144)なんですね。
-もちろん S3 はこのヘッダを受け付けてくれませんので、テキストファイルとしてアップロードされてしまいます。
+#### refreshend
+Refresh ending event.
 
-それではどうするのか。
+## License
 
-#### ```send()``` メソッドに ```Ti.Blob``` として送信データを渡します
+The MIT License (MIT) Copyright (c) 2013 Kosuke Isobe, Socketbase Inc.
 
-	// 区切り文字
-	var boundary = Ti.Utils.md5HexDigest('' + Date.now());
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-	// 送信データを Ti.Buffer で組み立てる
-	data = Ti.createBuffer({
-		value: '--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="key"\r\n\r\n' +
-		key + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="AWSAccessKeyId"\r\n\r\n' +
-		AWSAccessKeyId + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="acl"\r\n\r\n' +
-		acl + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="Content-Disposition"\r\n\r\n' +
-		ContentDisposition + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="Content-Type"\r\n\r\n' +
-		ContentType + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="success_action_redirect"\r\n\r\n' +
-		successActionRedirect + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="x-amz-server-side-encryption"\r\n\r\n' +
-		xAmzServerSideEncryption + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="policy"\r\n\r\n' +
-		policy + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="signature"\r\n\r\n' +
-		signature + '\r\n' +
-		'--' + boundary + '\r\n' +
-		'Content-Disposition: form-data; name="file"; filename="image.jpg"\r\n' +
-		'Content-Type: binary/octet-stream\r\n\r\n'
-	});
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-	// 写真を Ti.Stream で開いて Ti.Buffer 化し、送信データへ追加
-	stream = Ti.Stream.createStream({
-		mode : Ti.Stream.MODE_READ,
-		source: file
-	});
-	data.append(Ti.Stream.readAll(stream));
-	stream.close();
-
-	// 最後の区切り文字を追加
-	data.append(Ti.createBuffer({
-		value: '\r\n--' + boundary + '--\r\n'
-	}));
-
-	// 送信
-	var xhr = Ti.Netwrok.createHTTPClient({
-		onload: function(){},
-		onerror: function(){}
-	});
-	xhr.open(url, 'POST');
-	xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary);
-	xhr.send(data.toBlob());
-
-これでどうでしょう。
-見事ファイルも壊れずアップロードすることができました。
-
-ザックリと何をしているかというと、```Ti.Buffer``` として送信データを作って、最後に ```toBlob()``` で ```Ti.Blob``` 化して送信しています。
-正直、何を書いているのか、わけがわからなくなりますね。
-
-#### 最後にHTML のフォームに例えてみましょう
-
-	<form action="url" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="key" value="key">
-		<input type="hidden" name="AWSAccessKeyId" value="AWSAccessKeyId">
-		<input type="hidden" name="acl" value="acl">
-		<input type="hidden" name="Content-Disposition" value="ContentDisposition">
-		<input type="hidden" name="Content-Type" value="ContentType">
-		<input type="hidden" name="success_action_redirect" value="successActionRedirect">
-		<input type="hidden" name="x-amz-server-side-encryption" value="xAmzServerSideEncryption">
-		<input type="hidden" name="policy" value="policy">
-		<input type="hidden" name="signature" value="signature">
-		<input type="file" name="file">
-		<input type="submit" value="send">
-	</form>
-
-HTML だととても簡単ですね！
-
-### 〆
-少々コードが煩雑になってしまうのであまりオススメできませんが、どうしてもという方はこちらの方法で送信することができます。
-ぼくは早く ```LinkedHashMap``` にならないかと、首を長くして待っております（まったく期待できません）。
-
-### 14日目の方
-[@h5y1m141](https://twitter.com/h5y1m141) さんです。
-ACS ネタ、楽しみですね！
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
